@@ -1,0 +1,162 @@
+.primary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  padding-right: 0;
+  /* margin-top: 2rem; */
+  margin-right: -1rem;
+}
+
+.line {
+  display: block;
+  top: 50%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  height: 1px;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem 1rem 1rem;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+  background-color: rgba(23, 21, 21, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+.navbar-links li {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a .textbold {
+  font-weight: bold;
+  padding: 0rem 0.3rem;
+  color: #fff;
+}
+
+/* Base link styles */
+a {
+  text-decoration: none;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Underline effect on hover and active */
+a::after {
+  content: "";
+  position: absolute;
+  /* width: 100%; */
+  height: 2px;
+  background-color: #ffffff;
+  bottom: -2rem; /* Adjust to position the underline closer or farther */
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+/* On hover, the underline expands */
+a:hover::after {
+  width: 100%;
+  opacity: 0.4;
+}
+a:focus::after {
+  width: 100%;
+  opacity: 1;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.close-menu {
+  display: none; /* Hide close button by default */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+@media (max-width: 716px) {
+  .navbar {
+    padding: 1rem 0rem 1rem 0rem;
+  }
+  .navbar-links {
+    gap: 1rem;
+    list-style-type: none;
+  }
+}
+@media (max-width: 610px) {
+  .navbar.active .close-menu {
+    display: block;
+  }
+
+  /* Mobile menu styles */
+  .navbar {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    height: 100vh;
+    width: 65%;
+    background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    display: none;
+    padding-bottom: 3rem;
+  }
+
+  .navbar.active {
+    display: flex;
+    z-index: 999;
+    backdrop-filter: blur(8px); /* Adds a blur effect */
+    background-color: rgba(23, 21, 21, 0.2); /* Semi-transparent white */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+    transition: backdrop-filter 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 1rem;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .close-menu {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .primary-header {
+    margin-right: 0rem;
+  }
+}

@@ -1,0 +1,291 @@
+/* Main container */
+/* Main container */
+.technology-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0b0d17;
+  padding: 2rem;
+  color: white;
+  background-image: url("../assets/technology/background-technology-desktop.jpg"); /* Add your background image here */
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Avoid repeating the background */
+}
+
+/* Adjust background image size for different screen sizes */
+@media (max-width: 768px) {
+  .technology-container {
+    background-size: cover;
+    background-image: url("../assets/technology/background-technology-tablet.jpg");
+  }
+}
+
+@media (max-width: 480px) {
+  .technology-container {
+    background-size: cover;
+    background-image: url("../assets/technology/background-technology-mobile.jpg");
+  }
+}
+
+/* Flexbox container for content */
+.technology-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 0rem 1rem;
+}
+
+/* Circle container - aligned vertically */
+.circle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0rem 1rem;
+}
+
+/* Circle styling */
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid rgb(148, 145, 145);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.circle:hover {
+  border: 1px solid white;
+  background-color: #333;
+  color: white;
+}
+
+/* Active circle (clicked state) */
+.circle.active {
+  background-color: white; /* Darker background */
+  color: #333; /* Text color for active circle */
+}
+
+/* Left Section Styling */
+.left-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+.left-section h3 {
+  font-size: 1rem;
+  opacity: 0.75;
+  text-transform: uppercase;
+}
+
+.subheading {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  opacity: 0.75;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 400px;
+}
+
+/* Right Section Image */
+.right-section {
+  flex: 1;
+  text-align: center;
+}
+
+.launch-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+.headingtext {
+  padding: 0rem 2rem;
+  font-size: 2rem;
+}
+#number {
+  color: rgb(100, 100, 100);
+  padding: 1rem;
+  font-weight: 900;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .headingtext {
+    text-align: center;
+    padding: 0rem;
+    align-items: center;
+  }
+  .left-section {
+    max-width: 100%;
+  }
+
+  .launch-image {
+    max-width: 300px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .circle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  .circle-container {
+    flex-direction: row;
+    order: 2;
+  }
+  .right-section {
+    order: 3;
+  }
+  .left-section {
+    order: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .launch-image {
+    max-width: 250px;
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+/* Circle styling */
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.circle:hover {
+  background-color: #ddd;
+}
+
+/* Active circle style */
+.circle.active {
+  background-color: #0b0d17; /* Change this to your desired active color */
+  color: white;
+}
+
+/* Left Section Styling */
+.left-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Right Section Image */
+.right-section {
+  flex: 1;
+  text-align: center;
+}
+
+.launch-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .technology-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-section {
+    max-width: 100%;
+  }
+
+  .launch-image {
+    max-width: 300px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .circle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .launch-image {
+    max-width: 250px;
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .headingtext {
+    font-size: 1.2rem;
+  }
+  #number {
+    color: rgb(100, 100, 100);
+    padding: 0.6rem;
+    font-weight: 900;
+  }
+}

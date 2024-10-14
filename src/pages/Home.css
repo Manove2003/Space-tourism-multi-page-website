@@ -1,0 +1,182 @@
+/* Home container */
+.home {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  background-size: cover;
+  background-position: bottom center;
+  background-image: url("../assets/home/background-home-mobile.jpg");
+  padding: 2rem;
+  color: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.subheading {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+.fs-900 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5rem;
+}
+
+.text-accent {
+  color: #d0d6f9;
+  font-size: 0.9rem;
+  font-weight: lighter;
+  max-width: 400px;
+}
+
+/* Explore Button */
+/* .explore-button {
+  display: inline-block;
+  padding: 6rem 2rem;
+  font-size: 2.5rem;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 50%;
+  font-family: "Bellefair", serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  margin-top: 2rem;
+}
+
+.explore-button:hover {
+  background-color: #d0d6f9;
+} */
+
+/* Explore Button */
+/* Button Container */
+.button-container {
+  position: relative; /* Necessary for the pseudo-element positioning */
+  display: inline-block; /* Ensure the container wraps around the button */
+  margin-top: 2rem;
+  overflow: visible; /* Allow the circle to grow outside the container */
+}
+
+.button-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.2); /* Transparent white circle */
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Start from the center and scale to 0 */
+  transition: transform 0.6s ease; /* Smooth scaling animation */
+  z-index: 0; /* Ensure it's behind the button */
+}
+
+.button-container:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Expand the circle outside the container */
+}
+
+/* Explore Button */
+.explore-button {
+  position: relative; /* Needed for the button's content to stay above the expanding circle */
+  padding: 6rem 2rem;
+  font-size: 2.5rem;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 50%;
+  font-family: "Bellefair", serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  z-index: 1; /* Make sure the button stays above the expanding circle */
+}
+
+/* Responsive design for tablet */
+@media (min-width: 768px) {
+  .home {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+
+  .grid-container {
+    padding-bottom: max(6rem, 20vh);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 2rem;
+  }
+
+  .text-content {
+    grid-column: 1;
+    margin-left: 1rem;
+  }
+
+  .button-container {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .fs-900 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5rem;
+  }
+
+  .subheading {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  .text-accent {
+    font-size: 1rem;
+    line-height: 2;
+  }
+}
+
+/* Responsive design for desktop */
+@media (min-width: 1024px) {
+  .home {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
+
+  .fs-900 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5rem;
+  }
+
+  .subheading {
+    font-size: 1.5rem;
+  }
+
+  .text-accent {
+    font-size: 1rem;
+    line-height: 2;
+  }
+  .button-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+  }
+  .explore-button {
+    padding: 6rem 2rem;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .home {
+    padding: 1rem;
+  }
+  .subheading {
+    padding-top: 1rem;
+  }
+}
